@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git credentialsId: 'your-creds-id', url: 'https://github.com/<your-repo>.git'
+                git credentialsId: 'HichemBnM', url: 'https://github.com/HichemBnM/login-page'
             }
         }
 
