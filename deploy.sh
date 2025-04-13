@@ -3,7 +3,7 @@
 set -e
 
 # Define paths
-GIT_DIR="/var/www/html/test/login-page/github/"
+GIT_DIR="/var/jenkins_home/workspace/github"
 WEB_DIR="/var/www/html"
 
 # Optional: log start
