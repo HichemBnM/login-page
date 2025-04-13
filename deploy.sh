@@ -1,4 +1,10 @@
-cd /var/www/html/login-page/
+#!/bin/bash
+set -e  # Exit on errors
+
+cd /var/www/html/login-page
+git checkout main
 git pull origin main
-./deploy.sh
-systemctl restart your-app.service
+
+echo "✅ Repo updated!"
+
+# Add app build/start logic here if needed
