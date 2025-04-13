@@ -1,10 +1,17 @@
 #!/bin/bash
-set -e  # Exit on errors
+set -e  # Stop on error
 
+echo "➡️ Switching to project directory..."
 cd /var/www/html/login-page
+
+echo "⬇️ Pulling latest changes from GitHub..."
 git checkout main
 git pull origin main
 
-echo "✅ Repo updated!"
+echo "🚀 App updated!"
 
-# Add app build/start logic here if needed
+# Optionally restart app if needed (Node.js example):
+# npm install
+# pm2 restart app.js
+
+echo "✅ Deployment complete."
