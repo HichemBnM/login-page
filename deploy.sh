@@ -19,7 +19,7 @@ git pull origin main
 # rm -rf "$WEB_DIR"/*
 
 echo "📤 Deploying to web server..."
-cp docker cp jenkins:/var/jenkins_home/workspace/github /var/www/html/
+docker cp jenkins:/var/jenkins_home/workspace/github /var/www/html/
 systemctl restart your-app.service
 echo "✅ Deployment complete!"
 
