@@ -1,9 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        DEPLOY_PATH = "/var/www/html/"
-    }
 
     stages {
         stage('Clone Repo') {
