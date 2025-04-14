@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/your-username/login-page.git'
+                    url: 'https://github.com/HichemBnM/login-page.git'
             }
         }
 
