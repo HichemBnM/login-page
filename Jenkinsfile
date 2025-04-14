@@ -16,8 +16,9 @@ pipeline {
                 echo "🚀 Deploying to Server"
                 // SSH into the server or use SCP to copy files, deploy the code, and restart services
 
-                // Example: Copy files to server (assuming you have SSH set up in Jenkins)
+                sh '''
                 cp -r * /mnt/deploy/
+                '''
                 // Replace with the appropriate deployment command for your stack
             }
         }
