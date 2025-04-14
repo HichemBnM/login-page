@@ -1,21 +1,37 @@
 pipeline {
     agent any
 
+    environment {
+        DEPLOY_PATH = "/var/www/html/"
+    }
+
     stages {
         stage('Clone Repo') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/HichemBnM/login-page.git'
+                echo "✅ Cloning Repo from GitHub"
+                checkout scm // This checks out the code from your GitHub repo into the Jenkins workspace
             }
         }
 
-        stage('Deploy') {
+
+        stage('Deploy to Server') {
             steps {
-                sh '''
-                    chmod +x deploy.sh
-                    ./deploy.sh
-                '''
+                echo "🚀 Deploying to Server"
+                // SSH into the server or use SCP to copy files, deploy the code, and restart services
+
+                // Example: Copy files to server (assuming you have SSH set up in Jenkins)
+                cp -r * /mnt/deploy/
+                // Replace with the appropriate deployment command for your stack
             }
+        }
+    }
+
+    post {
+        success {
+            echo "✅ Pipeline Successful!"
+        }
+        failure {
+            echo "❌ Pipeline Failed!"
         }
     }
 }
